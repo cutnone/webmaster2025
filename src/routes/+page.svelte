@@ -8,6 +8,7 @@
 <div class="cta">
     <button>start an order</button>
     <span>open 11 a.m. - 9 p.m. | tue thru sun</span>
+    <img class="mushrooms-2" src="/mushrooms-green.svg" alt="">
 </div>
 <div class="blurb">
     <figure>
@@ -17,9 +18,9 @@
     </figure>
     <div class="content">
         <img src="https://unsplash.it/500" alt="" class="bg">
-            <h2>enoki is a vegetarian restaurant in the Philadelphia area harnessing the unique flavors and textures of mushrooms to create familiar yet surprising dishes.</h2>
-            <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World”, producing 50% of the world’s mushrooms.</p>
-            <a href="/about">Learn More</a>
+        <h2>enoki is a vegetarian restaurant in the Philadelphia area harnessing the unique flavors and textures of mushrooms to create familiar yet surprising dishes.</h2>
+        <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World”, producing 50% of the world’s mushrooms.</p>
+        <a href="/about">Learn More</a>
     </div>
     <figure>
         <img src="https://unsplash.it/500" alt="">
@@ -63,7 +64,7 @@
 
     figure {
         position: relative;
-        display: block;
+        // display: block;
         img {
             width: 100%;
             height: 100%;
@@ -87,6 +88,7 @@
     }
 
     .cta {
+        position: relative;
         font-family: var(--accent-font-family);
         button {
             font-family: var(--accent-font-family);
@@ -102,10 +104,19 @@
         gap: 2em;
         align-items: center;
         padding: 0 3.5rem 3.5rem 3.5rem;
+
+        .mushrooms-2 {
+            position: absolute;
+            right: 3rem;
+            bottom: -1rem;
+            height: 10rem;
+            opacity: .5;
+        }
     }
 
     .blurb {
         display: flex;
+        height: 30rem;
         .content {
             position: relative;
             display: grid;
@@ -114,7 +125,7 @@
             align-content: center;
             align-items: center;
             gap: 2rem;
-            padding: 2rem;
+            padding: 4rem;
             h2 {
                 font-family: var(--accent-font-family);
             }
@@ -133,10 +144,11 @@
                 z-index: -1;
                 filter: brightness(.3);
             }
-            flex-grow: 1;
+            flex-grow: 2;
         }
         figure {
-            flex-basis: .5;
+            flex-grow: 1;
+            flex-basis: 20rem;
         }
     }
     img {
