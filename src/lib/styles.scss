@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
+* {
+    margin: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    transition: var(--default-transition);
+    transition-property: none;
+    scrollbar-width: thin;
+    color: var(--color-text);
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-family: var(--main-font-family);
+    --viewport-height: 100vh;
+    --color-background: #FFFFFF;
+    --color-text: #000000;
+    --color-accent: #39553B;
+    --color-accent-light: #A9C593;
+    --color-background-alt: #EEEADD;
+    --main-font-family: "Inter", Helvetica, arial, sans-serif;
+    --card-shadow: 0 0 3rem #000000aa;
+    --border-radius: 1rem;
+    --border-config: 1px solid var(--color-extra-light);
+    --panel-padding: 2rem;
+    --button-padding: 1em;
+    --default-transition: .3s cubic-bezier(0, 0, 0, 1); 
+    --accent-font-family: "Libre Bodoni", times, serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    padding: 1em 2em;
+    border-radius: 1em;
+}
