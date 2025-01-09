@@ -30,6 +30,9 @@
 
 a {
     text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 button {
@@ -38,4 +41,14 @@ button {
     color: var(--color-background);
     padding: 1em 2em;
     border-radius: 1em;
+    cursor: pointer;
+    outline: 2px solid var(--color-accent);
+    transition-property: outline-offset;
+    outline-offset: -2px;
+    &:hover, &:focus-visible {
+        outline-offset: .5em;
+    }
+    &:active {
+        outline-offset: .25em;
+    }
 }

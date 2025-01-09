@@ -6,7 +6,7 @@
     <h2>we have mushroom for everyone</h2>
 </div>
 <div class="cta">
-    <button>start an order</button>
+    <a href="/menu"><button>start an order</button></a>
     <span>open 11 a.m. - 9 p.m. | tue thru sun</span>
     <img class="mushrooms-2" src="/mushrooms-green.svg" alt="">
 </div>
