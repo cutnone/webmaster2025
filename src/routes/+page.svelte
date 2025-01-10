@@ -48,7 +48,7 @@
             left: 50px;
         }
 
-        h1 {
+        h1, h1 * {
             font-size: 10rem;
             color: var(--color-background);
             position: absolute;
