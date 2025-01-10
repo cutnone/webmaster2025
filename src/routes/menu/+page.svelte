@@ -5,13 +5,14 @@
 <script lang="ts">
 	import ButtonSelector from '$lib/ButtonSelector.svelte';
 	import Card from '$lib/Card.svelte';
+	import Cart from '$lib/Cart.svelte';
 
 	const items = [
 		{
             id: 0,
 			name: 'cream of mushroom',
 			addons: ['Sourdough'],
-			imageUrl: '/cream-of-mushroom.jpg',
+			imageUrl: '/enoki/cream-of-mushroom.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -27,7 +28,7 @@
             id: 1,
 			name: 'thai red noodle',
 			addons: ['Sourdough'],
-			imageUrl: '/thai-red-noodle.jpg',
+			imageUrl: '/enoki/thai-red-noodle.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -43,7 +44,7 @@
             id: 2,
 			name: 'thai green noodle',
 			addons: ['Sourdough'],
-			imageUrl: '/thai-green-noodle.jpg',
+			imageUrl: '/enoki/thai-green-noodle.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -59,7 +60,7 @@
             id: 3,
 			name: 'firecracker ramen',
 			addons: ['Sourdough'],
-			imageUrl: '/firecracker-ramen.jpg',
+			imageUrl: '/enoki/firecracker-ramen.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -75,7 +76,7 @@
             id: 4,
 			name: 'miso ramen',
 			addons: ['Sourdough'],
-			imageUrl: '/miso-ramen.jpg',
+			imageUrl: '/enoki/miso-ramen.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -91,7 +92,7 @@
             id: 5,
 			name: 'green goddess',
 			addons: ['Sourdough'],
-			imageUrl: '/green-goddess-soup.jpg',
+			imageUrl: '/enoki/green-goddess-soup.jpg',
 			sizes: [
 				{
 					name: 'Cup',
@@ -106,7 +107,7 @@
 		{
             id: 6,
 			name: 'green goddess',
-			imageUrl: '/green-goddess-salad.jpg',
+			imageUrl: '/enoki/green-goddess-salad.jpg',
 			addons: null,
 			sizes: [
 				{
@@ -122,7 +123,7 @@
 		{
             id: 7,
 			name: 'chickpea caesar',
-			imageUrl: '/caesar-salad.jpg',
+			imageUrl: '/enoki/caesar-salad.jpg',
 			addons: null,
 			sizes: [
 				{
@@ -138,7 +139,7 @@
 		{
             id: 8,
 			name: "lion's mane",
-			imageUrl: '/lions-mane.jpg',
+			imageUrl: '/enoki/lions-mane.jpg',
 			addons: null,
 			sizes: [
 				{
@@ -154,7 +155,7 @@
 		{
             id: 9,
 			name: 'dumpling noodle',
-			imageUrl: '/dumpling-noodle.jpg',
+			imageUrl: '/enoki/dumpling-noodle.jpg',
 			addons: null,
 			sizes: [
 				{
@@ -170,7 +171,7 @@
 		{
             id: 10,
 			name: 'peach burrata',
-			imageUrl: '/peach-burrata.jpg',
+			imageUrl: '/enoki/peach-burrata.jpg',
 			addons: null,
 			sizes: [
 				{
@@ -185,13 +186,30 @@
 		}
 	];
 
+    let cart: any[] = $state([]);
+
     function addItemToCart(data: any) {
 
         const item = items[data.id];
 
         const size = item.sizes[data.size];
 
-        alert(`ordered a ${size.name} ${item.name}`);
+        for (const i of cart) {
+            if (i.id === data.id && i.size === size.name) {
+                i.quantity++;
+                return;
+            }
+        }
+
+        cart.push({
+            id: data.id,
+            name: item.name,
+            size: size.name,
+            price: size.price,
+            quantity: 1,
+        })
+
+
 
     }
 
@@ -226,7 +244,18 @@
 	{/each}
 </main>
 
+<div class="cart-container">
+    <Cart bind:items={cart}/>
+</div>
+
 <style lang="scss">
+
+    .cart-container {
+        position: fixed;
+        bottom: 5rem;
+        right: 5rem;
+    }
+
 	h1,
 	h2 {
 		font-family: var(--accent-font-family);

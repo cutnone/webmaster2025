@@ -9,7 +9,7 @@
             <h2>meet our founder- he's a fun-gi!</h2>
             <span>Chef Akari Ito has always had an affinity towards the culinary arts. Despite Ito’s passion for food and unique flavors, his passion for the environment has led him to take a new path as a vegetarian. Despite giving up meat, Ito has utilized the unique properties of mushrooms and other plants to create satiating yet tasty meals. Here at enoki, we hope to provide a unique experience with our cozy restaurant space and delicious plant-based dishes.</span>
         </div>
-        <img src="/founder.jpg" alt="">
+        <img src="/enoki/founder.jpg" alt="">
     </div>
     <h2>why mushrooms?</h2>
     <p>
@@ -27,7 +27,7 @@
         <li>Mushrooms mature in about 6-10 weeks, allowing for multiple crop yields in the same year.</li>
         <li>Mushrooms are decomposers, and can therefore be grown using agricultural waste from other types of farms.</li>
     </ul>
-    <img src="/mushroom-collage.jpg" alt="">
+    <img src="/enoki/mushroom-collage.jpg" alt="">
     <h2>how are our mushrooms grown?</h2>
     <p>Our mushrooms are a local product from Kennett Square, a town in Chester County, PA. This small town is known for its large mushroom farms, producing 50% of the world’s mushrooms.</p>
     <p>Historically, horse manure from nearby cities was mixed with hay and cocoa shells from the Hershey chocolate factory. This mix of ingredients is the perfect formula for growing mushroom spores. Spores are placed inside the manure and are left to grow in moderated buildings with the proper amount of water, carbon, and heat.</p>

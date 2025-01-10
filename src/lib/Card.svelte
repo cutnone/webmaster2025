@@ -45,16 +45,16 @@
     </div>
     <div class="row btnrow" class:showing={adding}>
         <button onclick={stopAdding} class="iconbtn close">
-            <img class="icon" src="/icon-cross-green.svg" alt="">
+            <img class="icon" src="/enoki/icon-cross-green.svg" alt="">
         </button>
         <ButtonSelector options={sizes.map((v: any)=>v.name)} bind:selected={activeSize}/>
         <button class="iconbtn close">
-            <img class="icon" src="/icon-check.svg" alt="">
+            <img class="icon" src="/enoki/icon-check.svg" alt="">
         </button>
     </div>
     <button class="addbtn" onclick={addClick} class:iconbtn={adding}>
         {#if adding}
-            <img transition:slide={{axis: "x", duration: 300, easing: expoOut}} class="icon" src="/icon-check.svg" alt="">
+            <img transition:slide={{axis: "x", duration: 300, easing: expoOut}} class="icon" src="/enoki/icon-check.svg" alt="">
         {:else}
             <span transition:slide={{axis: "x", duration: 300, easing: expoOut}}>Add to Order</span>
         {/if}
@@ -159,7 +159,7 @@
         span {
             color: var(--color-background);
             white-space: nowrap;
-            width: calc(33.5ch);
+            width: calc(29ch);
         }
     }
 

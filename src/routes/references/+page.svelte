@@ -3,7 +3,7 @@
 </svelte:head>
 
 <article>
-    <img src="/mushrooms-black.svg" alt="">
+    <img src="/enoki/mushrooms-black.svg" alt="">
     <section>
         <h2>references</h2>
         <p class="links">

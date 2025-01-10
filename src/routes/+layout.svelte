@@ -31,38 +31,38 @@
 
 
 <header>
-    <a href="/"><img src="/logowhite.svg" alt="" class="logo"></a>
+    <a href="/enoki/"><img src="/enoki/logowhite.svg" alt="" class="logo"></a>
     <nav>
-        <a href="/">home</a>
-        <a href="/about">about us</a>
-        <a href="/menu">menu</a>
-        <a href="/references">references</a>
+        <a href="/enoki/">home</a>
+        <a href="/enoki/about">about us</a>
+        <a href="/enoki/menu">menu</a>
+        <a href="/enoki/references">references</a>
     </nav>
     <div class="user">
         <span>hi, guest!</span>
-        <img src="" alt="" class="pfp">
+        <img src="/enoki" alt="" class="pfp">
     </div>
     <button class="open-nav" onclick={toggleNav}>
         {#if navOpen}
             <img 
                 in:slide={{easing: expoOut, duration: 300}} 
                 out:slide={{easing: expoOut, duration: 300}} 
-            src="/icon-cross.svg" alt="">
+            src="/enoki/icon-cross.svg" alt="">
         {:else}
             <img 
                 in:slide={{easing: expoOut, duration: 300}} 
                 out:slide={{easing: expoOut, duration: 300}}  
-            src="/icon-burger.svg" alt="">
+            src="/enoki/icon-burger.svg" alt="">
         {/if}
     </button>
 </header>
 
 {#if navOpen}
 <div class="mobile-nav" transition:slide={{axis: "y", duration: 1000, easing: expoOut}}>
-    <a href="/" onclick={toggleNav}>home</a>
-    <a href="/about" onclick={toggleNav}>about us</a>
-    <a href="/menu" onclick={toggleNav}>menu</a>
-    <a href="/references" onclick={toggleNav}>references</a>
+    <a href="/enoki/" onclick={toggleNav}>home</a>
+    <a href="/enoki/about" onclick={toggleNav}>about us</a>
+    <a href="/enoki/menu" onclick={toggleNav}>menu</a>
+    <a href="/enoki/references" onclick={toggleNav}>references</a>
 </div>
 {/if}
 
@@ -77,10 +77,10 @@
 
     </div>
     <!-- <nav>
-        <a href="/">Home</a>
-        <a href="/about">About Us</a>
-        <a href="/menu">Menu</a>
-        <a href="/references">References</a>
+        <a href="/enoki/">Home</a>
+        <a href="/enoki/about">About Us</a>
+        <a href="/enoki/menu">Menu</a>
+        <a href="/enoki/references">References</a>
     </nav> -->
     <p>
         © 2025 Enoki Restaurant. All rights reserved.

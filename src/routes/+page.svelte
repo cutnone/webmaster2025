@@ -3,30 +3,30 @@
 </svelte:head>
 
 <div class="hero">
-    <img class="himg" src="/thai-green-noodle.jpg" alt="">
-    <img class="mushrooms" src="/mushrooms-white.svg" alt="">
+    <img class="himg" src="/enoki/thai-green-noodle.jpg" alt="">
+    <img class="mushrooms" src="/enoki/mushrooms-white.svg" alt="">
     <h1>come on in</h1>
     <h2>we have mushroom for everyone</h2>
 </div>
 <div class="cta">
-    <a href="/menu"><button>start an order</button></a>
+    <a href="/enoki/menu"><button>start an order</button></a>
     <span>open 11 a.m. - 9 p.m. | tue thru sun</span>
-    <img class="mushrooms-2" src="/mushrooms-green.svg" alt="">
+    <img class="mushrooms-2" src="/enoki/mushrooms-green.svg" alt="">
 </div>
 <div class="blurb">
     <figure>
-        <img src="/firecracker-ramen.jpg" alt="">
+        <img src="/enoki/firecracker-ramen.jpg" alt="">
         <div class="overlay"></div>
         <figcaption>firecracker ramen noodle soup</figcaption>
     </figure>
     <div class="content">
-        <img src="/mushrooms-bowl.jpg" alt="" class="bg">
+        <img src="/enoki/mushrooms-bowl.jpg" alt="" class="bg">
         <h2>enoki is a vegetarian restaurant in the Philadelphia area harnessing the unique flavors and textures of mushrooms to create familiar yet surprising dishes.</h2>
         <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World”, producing 50% of the world’s mushrooms.</p>
-        <a href="/about">Learn More</a>
+        <a href="/enoki/about">Learn More</a>
     </div>
     <figure>
-        <img src="/caesar-salad.jpg" alt="">
+        <img src="/enoki/caesar-salad.jpg" alt="">
         <div class="overlay"></div>
         <figcaption class="right">chickpea caesar salad</figcaption>
     </figure>
