@@ -22,7 +22,7 @@
     <div class="content">
         <img src="/enoki/mushrooms-bowl.jpg" alt="" class="bg">
         <h2>Enoki is a vegetarian restaurant in the Philadelphia area harnessing the unique flavors and textures of mushrooms to create familiar yet surprising dishes.</h2>
-        <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World”, producing 50% of the world’s mushrooms.</p>
+        <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World,” producing 50% of the world’s mushrooms.</p>
         <a href="/enoki/about">Learn More</a>
     </div>
     <figure>
