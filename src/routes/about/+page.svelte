@@ -8,7 +8,7 @@
         <div class="col">
             <h2>meet our founder- he's a fun-gi!</h2>
             <span>Chef Akari Ito has always had an affinity towards the culinary arts. Despite Ito’s passion for food and unique flavors, his passion for the environment has led him down a new path as a vegetarian. Despite giving up meat, Ito has utilized the unique properties of mushrooms and other plants to create satiating and tasty meals. </span>
-            <span>At Enoki, we believe that eating plant-based food can be delicious and flavorful. We hope to provide a unique experience with our cozy restaurant space, vibrant salads, and cozy soups. Whether you are strictly vegetarian or just looking to try new flavors, Enoki has something to offer.</span>
+            <span>At Enoki, we believe that eating plant-based food can be delicious and flavorful. We hope to provide a unique experience with our cozy restaurant space, vibrant salads, and hearty soups. Whether you are strictly vegetarian or just looking to try new flavors, Enoki has something to offer.</span>
         </div>
         <img src="/enoki/founder.jpg" alt="">
     </div>
