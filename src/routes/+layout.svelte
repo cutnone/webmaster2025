@@ -1,4 +1,8 @@
 
+<svelte:head>
+    <title>Enoki</title>
+</svelte:head>
+
 <script lang="ts">
     import '$lib/styles.scss'
 	import { onMount } from 'svelte';
@@ -39,7 +43,17 @@
         <img src="" alt="" class="pfp">
     </div>
     <button class="open-nav" onclick={toggleNav}>
-        nav
+        {#if navOpen}
+            <img 
+                in:slide={{easing: expoOut, duration: 300}} 
+                out:slide={{easing: expoOut, duration: 300}} 
+            src="/icon-cross.svg" alt="">
+        {:else}
+            <img 
+                in:slide={{easing: expoOut, duration: 300}} 
+                out:slide={{easing: expoOut, duration: 300}}  
+            src="/icon-burger.svg" alt="">
+        {/if}
     </button>
 </header>
 
@@ -55,6 +69,13 @@
 {@render children()}
 
 <footer>
+    <div class="contact">
+        <h2>contact us</h2>
+        <span><a href="mailto:contact@enoki.com">contact@enoki.com</a> (not a real email)</span>
+        <span><a href="tel:+12676804779">+1 (267) 680-4779</a> (not real a phone number)</span>
+        <span><a href="https://maps.app.goo.gl/YB4oz79MZ4xiWmcm7">123 Melody Drive, Springfield PA, 19064</a> (not a real place)</span>
+
+    </div>
     <!-- <nav>
         <a href="/">Home</a>
         <a href="/about">About Us</a>
@@ -91,6 +112,14 @@
 
     .open-nav {
         display: none;
+        background-color: transparent;
+        outline: none;
+        padding: 0;
+        border-radius: 0;
+
+        img {
+            height: 2em;
+        }
     }
 
     footer, header {
@@ -106,7 +135,22 @@
     }
 
     footer {
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+        
+        .contact {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            a {
+                text-decoration: underline;
+            }
+            h2 {
+                font-weight: normal;
+                font-style: italic;
+                font-family: var(--accent-font-family);
+            }
+        }
     }
 
     header {
@@ -133,6 +177,28 @@
 
         .open-nav {
             display: block;
+        }
+    }
+
+    @media (max-width: 1625px) {
+
+        footer {
+            align-items: end;
+            .contact {
+                flex-direction: column;
+                gap: .5rem;
+                align-items: start;
+            }
+        }
+    }
+
+    @media (max-width: 850px) {
+
+        footer {
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap: 1rem;
         }
     }
 

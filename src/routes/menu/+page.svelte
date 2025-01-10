@@ -1,62 +1,273 @@
-<script>
-	import Card from "$lib/Card.svelte";
+<svelte:head>
+    <title>Menu</title>
+</svelte:head>
 
+<script lang="ts">
+	import ButtonSelector from '$lib/ButtonSelector.svelte';
+	import Card from '$lib/Card.svelte';
+
+	const items = [
+		{
+            id: 0,
+			name: 'cream of mushroom',
+			addons: ['Sourdough'],
+			imageUrl: '/cream-of-mushroom.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 5.99
+				},
+				{
+					name: 'Bowl',
+					price: 9.99
+				}
+			]
+		},
+		{
+            id: 1,
+			name: 'thai red noodle',
+			addons: ['Sourdough'],
+			imageUrl: '/thai-red-noodle.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 6.99
+				},
+				{
+					name: 'Bowl',
+					price: 10.99
+				}
+			]
+		},
+		{
+            id: 2,
+			name: 'thai green noodle',
+			addons: ['Sourdough'],
+			imageUrl: '/thai-green-noodle.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 6.99
+				},
+				{
+					name: 'Bowl',
+					price: 10.99
+				}
+			]
+		},
+		{
+            id: 3,
+			name: 'firecracker ramen',
+			addons: ['Sourdough'],
+			imageUrl: '/firecracker-ramen.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 7.99
+				},
+				{
+					name: 'Bowl',
+					price: 11.99
+				}
+			]
+		},
+		{
+            id: 4,
+			name: 'miso ramen',
+			addons: ['Sourdough'],
+			imageUrl: '/miso-ramen.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 7.99
+				},
+				{
+					name: 'Bowl',
+					price: 11.99
+				}
+			]
+		},
+		{
+            id: 5,
+			name: 'green goddess',
+			addons: ['Sourdough'],
+			imageUrl: '/green-goddess-soup.jpg',
+			sizes: [
+				{
+					name: 'Cup',
+					price: 5.99
+				},
+				{
+					name: 'Bowl',
+					price: 9.99
+				}
+			]
+		},
+		{
+            id: 6,
+			name: 'green goddess',
+			imageUrl: '/green-goddess-salad.jpg',
+			addons: null,
+			sizes: [
+				{
+					name: 'Small',
+					price: 6.99
+				},
+				{
+					name: 'Large',
+					price: 10.99
+				}
+			]
+		},
+		{
+            id: 7,
+			name: 'chickpea caesar',
+			imageUrl: '/caesar-salad.jpg',
+			addons: null,
+			sizes: [
+				{
+					name: 'Small',
+					price: 6.99
+				},
+				{
+					name: 'Large',
+					price: 10.99
+				}
+			]
+		},
+		{
+            id: 8,
+			name: "lion's mane",
+			imageUrl: '/lions-mane.jpg',
+			addons: null,
+			sizes: [
+				{
+					name: 'Small',
+					price: 6.99
+				},
+				{
+					name: 'Large',
+					price: 10.99
+				}
+			]
+		},
+		{
+            id: 9,
+			name: 'dumpling noodle',
+			imageUrl: '/dumpling-noodle.jpg',
+			addons: null,
+			sizes: [
+				{
+					name: 'Small',
+					price: 7.99
+				},
+				{
+					name: 'Large',
+					price: 11.99
+				}
+			]
+		},
+		{
+            id: 10,
+			name: 'peach burrata',
+			imageUrl: '/peach-burrata.jpg',
+			addons: null,
+			sizes: [
+				{
+					name: 'Small',
+					price: 6.99
+				},
+				{
+					name: 'Large',
+					price: 10.99
+				}
+			]
+		}
+	];
+
+    function addItemToCart(data: any) {
+
+        const item = items[data.id];
+
+        const size = item.sizes[data.size];
+
+        alert(`ordered a ${size.name} ${item.name}`);
+
+    }
+
+	const menu = [
+		{
+			name: 'soup',
+			items: [0, 1, 2, 3, 4, 5]
+		},
+		{
+			name: 'salad',
+			items: [6, 7, 8, 9, 10]
+		}
+	];
 </script>
+
 <main>
-    <h1>our menu</h1>
-    <div class="menu-section">
-        <h2>soup</h2>
-        <Card name="cream of mushroom" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="thai red noodle" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="thai green noodle" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="firecracker ramen" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="miso ramen" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="green goddess" addons="+ Sourdough" price="$9.99" imageUrl="https://unsplash.it/500"/>
-    </div>
-    <div class="menu-section">
-        <h2>salad</h2>
-        <Card name="green goddess" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="chickpea caesar" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="lion's mane" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="dumpling noodle" price="$9.99" imageUrl="https://unsplash.it/500"/>
-        <Card name="peach burrata" price="$9.99" imageUrl="https://unsplash.it/500"/>
-    </div>
+	<h1>our menu</h1>
+	{#each menu as section}
+		<div class="menu-section">
+			<h2>{section.name}</h2>
+			{#each section.items as id}
+				<Card
+                    itemId={id}
+					onItemAdded={addItemToCart}
+					name={items[id].name}
+					addons={items[id].addons ? '+ ' + items[id].addons.join(', ') : null}
+					sizes={items[id].sizes}
+					imageUrl={items[id].imageUrl}
+				/>
+			{/each}
+		</div>
+	{/each}
 </main>
 
 <style lang="scss">
-    h1, h2 {
-        font-family: var(--accent-font-family);
-        font-style: italic;
-        font-weight: normal;
-    }
-    h1 {
-        text-align: center;
-        font-size: 4rem;
-        margin-top: 1rem;
-    }
-    
-    h2 {
-        grid-column: 1 / -1;
-        padding-left: 1rem;
-        font-size: 3rem;
-    }
+	h1,
+	h2 {
+		font-family: var(--accent-font-family);
+		font-style: italic;
+		font-weight: normal;
+	}
+	h1 {
+		text-align: center;
+		font-size: 4rem;
+		margin-top: 1rem;
+	}
 
-    .menu-section {
-        max-width: calc(4 * 30ch + 3 * 1rem + 4rem);
-        width: 100%;
-        padding: 1rem 2rem;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 30ch);
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-    }
+	h2 {
+		grid-column: 1 / -1;
+		padding-left: 1rem;
+		font-size: 3rem;
+	}
 
-    main {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 1.5rem 0;
-    }
+	.menu-section {
+		max-width: calc(4 * 30ch + 3 * 1rem + 4rem);
+		width: 100%;
+		padding: 1rem 2rem;
+		margin: auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 30ch);
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 1.5rem 0;
+	}
+
+	@media (max-width: 750px) {
+		h2 {
+			text-align: center;
+			padding: 0;
+		}
+	}
 </style>

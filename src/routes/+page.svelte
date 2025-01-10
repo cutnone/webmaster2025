@@ -1,6 +1,9 @@
+<svelte:head>
+    <title>Enoki</title>
+</svelte:head>
 
 <div class="hero">
-    <img class="himg" src="/hero-soup.jpg" alt="">
+    <img class="himg" src="/thai-green-noodle.jpg" alt="">
     <img class="mushrooms" src="/mushrooms-white.svg" alt="">
     <h1>come on in</h1>
     <h2>we have mushroom for everyone</h2>
@@ -12,20 +15,20 @@
 </div>
 <div class="blurb">
     <figure>
-        <img src="https://unsplash.it/500" alt="">
+        <img src="/firecracker-ramen.jpg" alt="">
         <div class="overlay"></div>
-        <figcaption>miso ramen</figcaption>
+        <figcaption>firecracker ramen noodle soup</figcaption>
     </figure>
     <div class="content">
-        <img src="https://unsplash.it/500" alt="" class="bg">
+        <img src="/mushrooms-bowl.jpg" alt="" class="bg">
         <h2>enoki is a vegetarian restaurant in the Philadelphia area harnessing the unique flavors and textures of mushrooms to create familiar yet surprising dishes.</h2>
         <p>Our mushrooms are sourced from Kennett Square, a local town in Chester County, PA. Kennett Square is the renowned “Mushroom Capital of the World”, producing 50% of the world’s mushrooms.</p>
         <a href="/about">Learn More</a>
     </div>
     <figure>
-        <img src="https://unsplash.it/500" alt="">
+        <img src="/caesar-salad.jpg" alt="">
         <div class="overlay"></div>
-        <figcaption>green goddess salad</figcaption>
+        <figcaption class="right">chickpea caesar salad</figcaption>
     </figure>
 </div>
 <style lang="scss">
@@ -50,7 +53,8 @@
             color: var(--color-background);
             position: absolute;
             bottom: .2rem;
-            right: 5rem;
+            // right: calc(4rem + 10vw);
+            right: max(5rem, 25vw - 10rem);
         }
         
         h2 {
@@ -58,7 +62,8 @@
             color: var(--color-accent);
             position: absolute;
             bottom: 0;
-            right: 2rem;
+            right: max(2rem, 25vw - 14rem);
+            // right: 2rem;
         }
     }
 
@@ -84,6 +89,9 @@
             padding: 1rem;
             font-family: var(--accent-font-family);
             color: var(--color-background);
+            &.right {
+                text-align: right;
+            }
         }
     }
 
@@ -99,6 +107,7 @@
         span {
             color: var(--color-accent);
             font-size: 1.5rem;
+            text-align: center;
         }
         display: flex;
         gap: 2em;
@@ -116,7 +125,8 @@
 
     .blurb {
         display: flex;
-        height: 30rem;
+        min-height: 30rem;
+        max-height: 40rem;
         .content {
             position: relative;
             display: grid;
@@ -154,5 +164,57 @@
     img {
         object-fit: cover;
         display: block;
+    }
+
+    @media (max-width: 1150px) {
+        .mushrooms, .mushrooms-2 {
+            display: none;
+        }
+
+        .blurb figure {
+            display: none;
+        }
+
+        .cta {
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .hero {
+            h1, h2 {
+                text-align: center;
+                height: fit-content;
+                width: 100%;
+            }
+            h1 {
+                inset: 0;
+                top: 50%;
+                translate: 0 -100%;
+                padding: 0 1rem;
+
+            }
+            
+            h2 {
+                inset: 0;
+                top: 50%;
+                // translate: 0 -50%;
+                color: var(--color-background);
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 950px) {
+        .hero {
+            h1 {
+                font-size: 4rem;
+                translate: 0 -150%;
+            }
+            h2 {
+                font-size: 2rem;
+                translate: 0 -50%;
+            }
+        }
     }
 </style>

@@ -10,10 +10,14 @@
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: var(--color-background);
+}
+
 :root {
     font-family: var(--main-font-family);
     --viewport-height: 100vh;
-    --color-background: #FFFFFF;
+    --color-background: #ffffff;
     --color-text: #000000;
     --color-accent: #39553B;
     --color-accent-light: #A9C593;
@@ -46,9 +50,9 @@ button {
     transition-property: outline-offset;
     outline-offset: -2px;
     &:hover, &:focus-visible {
-        outline-offset: .5em;
+        outline-offset: .25em;
     }
     &:active {
-        outline-offset: .25em;
+        outline-offset: .125em;
     }
 }
