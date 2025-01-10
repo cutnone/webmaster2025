@@ -48,7 +48,7 @@
             left: 50px;
         }
 
-        h1, h1 * {
+        h1 {
             font-size: 10rem;
             color: var(--color-background);
             position: absolute;
@@ -57,7 +57,7 @@
             right: max(5rem, 25vw - 10rem);
         }
         
-        h2 {
+        h2, h2 * {
             font-size: 3rem;
             color: var(--color-accent);
             position: absolute;
