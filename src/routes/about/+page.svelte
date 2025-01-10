@@ -48,6 +48,7 @@
         text-align: center;
 		font-size: 4rem;
 		margin-top: 1rem;
+        font-weight: normal;
     }
     article {
         max-width: 75ch;
