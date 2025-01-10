@@ -102,6 +102,7 @@
         flex-direction: column;
         z-index: 1;
         gap: 2rem;
+        overflow: hidden;
         a {
             font-weight: normal;
             font-family: var(--accent-font-family);
