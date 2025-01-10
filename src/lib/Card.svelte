@@ -98,6 +98,7 @@
         background-color: var(--color-background);
     }
     .card {
+        container-type: inline-size;
         position: relative;
         border-radius: 2rem;
         padding: 1rem;
@@ -128,6 +129,7 @@
         font-weight: normal;
         font-style: italic;
         color: var(--color-accent);
+        text-transform: lowercase;
     }
 
     .row {
@@ -159,7 +161,7 @@
         span {
             color: var(--color-background);
             white-space: nowrap;
-            width: calc(29ch);
+            width: calc(100cqw - 1rem);
         }
     }
 

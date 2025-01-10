@@ -1,14 +1,10 @@
 <script lang="ts">
+	import { onMount } from "svelte";
 	import { expoOut } from "svelte/easing";
-	import { slide } from "svelte/transition";
+	import { scale, slide } from "svelte/transition";
 
 
-    const {items = $bindable([{
-        name: "Cream of Mushroom",
-        size: "Cup",
-        quantity: 1,
-        price: 6.99,
-    }])} = $props();
+    const {items = $bindable([])} = $props();
 
     let cartSize = $derived(items.reduce((acc, v)=>acc+(v.quantity), 0))
 
@@ -18,17 +14,76 @@
 
     let receiptOpen = $state(false);
 
+    let confirmationOpen = $state(false);
+
+    onMount(()=>{
+        console.log("getting ls");
+        
+        let newItems = JSON.parse(localStorage.getItem("cart") ?? "[]");
+        items.length = 0;
+        items.push(...newItems)
+    })
+    
+    $effect(()=>{
+        localStorage.setItem("cart", JSON.stringify(items));
+    })
+
+    $effect(()=>{
+        if (items.length === 0 && !confirmationOpen) {
+            receiptOpen = false;
+        }
+    })
+    
+    $effect(()=>{
+        if (items.length === 1) {
+            receiptOpen = true;
+        }
+    })
+
     function toggleReceipt() {
-        receiptOpen = !receiptOpen;
+        if (items.length === 0) {
+            closeReceipt()
+            return;
+        }
+        if (!receiptOpen) {
+            receiptOpen = true;
+            return;
+        } 
+        closeReceipt();
     }
 
     function closeReceipt() {
+        confirmationOpen = false;
         receiptOpen = false;
     }
 
     function clearCart() {
         // items.splice(0, items.length);
         items.length = 0;
+    }
+
+    function removeItem(i: number) {
+        items.splice(i, 1)
+    }
+
+    function decrease(i: number) {
+        let item = items[i];
+        if (item.quantity > 1) item.quantity--;
+        else removeItem(i);
+    }
+
+    function increase(i: number) {
+        let item = items[i];
+        item.quantity++;
+    }
+
+    function closeConfirmation() {
+        confirmationOpen = false;
+    }
+
+    function checkout() {
+        clearCart();
+        confirmationOpen = true;
     }
 
 </script>
@@ -42,11 +97,11 @@
     <div class="items">
         {#each items as item, i}
             <div class="row">
-                <button class="iconbtn" onclick={()=>{items.splice(i, 1)}}><img src="/enoki/icon-cross.svg" alt=""></button>
+                <button class="iconbtn" onclick={()=>removeItem(i)}><img src="/enoki/icon-cross.svg" alt=""></button>
                 <span>{item.name} ({item.size}) x{item.quantity}</span>
                 <div class="q-controls">
-                    <button class="iconbtn" onclick={()=>{items[i].quantity++}}>add</button>
-                    <button class="iconbtn" onclick={()=>{items[i].quantity--}}>remove</button>
+                    <button class="iconbtn" onclick={()=>increase(i)}><img src="/enoki/icon-plus.svg" alt=""></button>
+                    <button class="iconbtn" onclick={()=>decrease(i)}><img src="/enoki/icon-minus.svg" alt=""></button>
                 </div>
                 <div class="divider"></div>
                 <div class="price">${(item.price*item.quantity).toFixed(2)}</div>
@@ -70,19 +125,51 @@
     </div>
     <div class="row actions">
         <button class="cancel" onclick={clearCart}>Cancel Order</button>
-        <button class="checkout">Checkout</button>
+        <button class="checkout" onclick={checkout}>Checkout</button>
     </div>
+    {#if confirmationOpen}
+        <div transition:scale={{easing: expoOut, duration: 300,}} class="confirmation">
+            <h3>order placed.</h3>
+            <p>Thank you!</p>
+            <button onclick={closeConfirmation}>Go Back</button>
+        </div>
+    {/if}
 </div>
 {/if}
 
 <div class="contain">
-    <button onclick={toggleReceipt}>
-        Cart
+    <button class="cart" onclick={toggleReceipt}>
+        <img src="/enoki/icon-shopping-basket.svg" alt="">
+        <span class="label">My Cart ({cartSize} items)</span>
     </button>
     <span class="cart-size">{cartSize}</span>
 </div>
 
 <style lang="scss">
+
+    .confirmation {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-accent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3rem;
+        width: 100%;
+        height: 100%;
+
+        button {
+            font-size: 1rem;
+            background-color: var(--color-background);
+            outline-color: var(--color-background);
+            color: var(--color-accent);
+            width: max-content;
+            padding: .5rem 1rem;
+            height: fit-content;
+        }
+        gap: 1rem;
+    }
 
     .actions {
         .checkout {
@@ -98,6 +185,7 @@
         button {
             flex-grow: 1;
             border-radius: 1rem;
+            font-size: 1rem;
         }
     }
     
@@ -111,6 +199,17 @@
         img {
             height: 1em;
         }
+    }
+
+    .cart {
+        img {
+            height: 2rem;
+        }
+
+        .label {
+            display: none;
+        }
+
     }
 
     .row {
@@ -129,7 +228,7 @@
 
     .q-controls {
         display: flex;
-        gap: .25rem;
+        gap: .5rem;
     }
 
     .divider {
@@ -139,7 +238,7 @@
         min-width: 1rem;
     }
 
-    h1 {
+    h1, h3 {
         font-family: var(--accent-font-family);
         font-weight: normal;
         font-style: italic;
@@ -175,7 +274,7 @@
         padding-right: .5rem;
         overflow-y: auto;
         max-height: 15rem;
-        width: max-content;
+        // width: max(max-content, 100%);
     }
 
     button {
@@ -192,7 +291,7 @@
     .cart-size {
         position: absolute;
         bottom: -2px;
-        left: -.5rem;
+        left: -.7rem;
         color: var(--color-background);
         background-color: var(--color-accent);
         border-radius: 5rem;
@@ -203,5 +302,44 @@
         justify-content: center;
         align-items: center;
         border: 2px solid var(--color-background);
+    }
+
+    @media (max-width: 750px) {
+        .contain {
+            width: 100%;
+
+            .cart {
+                width: 100%;
+                font-size: 1rem;
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                * {
+                    color: var(--color-background);
+                }
+
+                .label {
+                    display: inline;
+                }
+            }
+
+            .cart-size {
+                display: none;
+            }
+        }
+
+        .receipt {
+            position: static;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            margin-bottom: 2rem;
+            .row {
+                flex-wrap: wrap;
+            }
+            .items {
+                max-height: 10rem;
+            }
+        }
     }
 </style>

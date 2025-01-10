@@ -9,7 +9,7 @@
         <p class="links">
             <a href="https://drive.google.com/file/d/1A7JB05rW6TTA9tqngZyU39zHQC1VUFdi/view?usp=sharing">Copyright Checklist</a>,
             <a href="https://drive.google.com/file/d/1WQBUuUP9XL8mdw20fuoLAD1VEh0nQ-lb/view?usp=sharing">Plan of Work Log</a>,
-            <a href="">Works Cited</a>
+            <a href="https://drive.google.com/file/d/1fz2zbXRz9jdorSXGzIvYU3AkUXSeDQMo/view?usp=sharing">Works Cited</a>
         </p>
         <p>Built with <a href="https://svelte.dev/">SvelteKit (Svelte 5)</a>. We made the theme from scratch.</p>
         <p><em>Thank you for taking the time to judge our site!</em></p>

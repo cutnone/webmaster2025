@@ -10,7 +10,7 @@
 	const items = [
 		{
             id: 0,
-			name: 'cream of mushroom',
+			name: 'Cream of Mushroom',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/cream-of-mushroom.jpg',
 			sizes: [
@@ -26,7 +26,7 @@
 		},
 		{
             id: 1,
-			name: 'thai red noodle',
+			name: 'Thai Red Noodle',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/thai-red-noodle.jpg',
 			sizes: [
@@ -42,7 +42,7 @@
 		},
 		{
             id: 2,
-			name: 'thai green noodle',
+			name: 'Thai Green Noodle',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/thai-green-noodle.jpg',
 			sizes: [
@@ -58,7 +58,7 @@
 		},
 		{
             id: 3,
-			name: 'firecracker ramen',
+			name: 'Firecracker Ramen',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/firecracker-ramen.jpg',
 			sizes: [
@@ -74,7 +74,7 @@
 		},
 		{
             id: 4,
-			name: 'miso ramen',
+			name: 'Miso Ramen',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/miso-ramen.jpg',
 			sizes: [
@@ -90,7 +90,7 @@
 		},
 		{
             id: 5,
-			name: 'green goddess',
+			name: 'Green Goddess Soup',
 			addons: ['Sourdough'],
 			imageUrl: '/enoki/green-goddess-soup.jpg',
 			sizes: [
@@ -106,7 +106,7 @@
 		},
 		{
             id: 6,
-			name: 'green goddess',
+			name: 'Green Goddess Salad',
 			imageUrl: '/enoki/green-goddess-salad.jpg',
 			addons: null,
 			sizes: [
@@ -122,7 +122,7 @@
 		},
 		{
             id: 7,
-			name: 'chickpea caesar',
+			name: 'Chickpea Caesar',
 			imageUrl: '/enoki/caesar-salad.jpg',
 			addons: null,
 			sizes: [
@@ -138,7 +138,7 @@
 		},
 		{
             id: 8,
-			name: "lion's mane",
+			name: "Lion's Mane",
 			imageUrl: '/enoki/lions-mane.jpg',
 			addons: null,
 			sizes: [
@@ -154,7 +154,7 @@
 		},
 		{
             id: 9,
-			name: 'dumpling noodle',
+			name: 'Dumpling Noodle',
 			imageUrl: '/enoki/dumpling-noodle.jpg',
 			addons: null,
 			sizes: [
@@ -170,7 +170,7 @@
 		},
 		{
             id: 10,
-			name: 'peach burrata',
+			name: 'Peach Burrata',
 			imageUrl: '/enoki/peach-burrata.jpg',
 			addons: null,
 			sizes: [
@@ -297,6 +297,13 @@
 		h2 {
 			text-align: center;
 			padding: 0;
+		}
+
+		.cart-container {
+			width: 100vw;
+			padding: 2rem;
+			right: 0;
+			bottom: 0;
 		}
 	}
 </style>
