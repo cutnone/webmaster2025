@@ -204,6 +204,9 @@
                 // translate: 0 -50%;
                 color: var(--color-background);
                 padding: 0 1rem;
+                * {
+                    color: var(--color-background);
+                }
             }
         }
     }
