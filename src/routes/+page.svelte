@@ -6,7 +6,7 @@
     <img class="himg" src="/enoki/thai-green-noodle.jpg" alt="">
     <img class="mushrooms" src="/enoki/mushrooms-white.svg" alt="">
     <h1>come on in</h1>
-    <h2>we have mushroom for everyone</h2>
+    <h2>we have <em>mushroom</em> for everyone</h2>
 </div>
 <div class="cta">
     <a href="/enoki/menu"><button>start an order</button></a>
