@@ -57,13 +57,16 @@
             right: max(5rem, 25vw - 10rem);
         }
         
-        h2, h2 * {
+        h2 {
             font-size: 3rem;
             color: var(--color-accent);
             position: absolute;
             bottom: 0;
             right: max(2rem, 25vw - 14rem);
             // right: 2rem;
+            * {
+                color: var(--color-accent);
+            }
         }
     }
 
