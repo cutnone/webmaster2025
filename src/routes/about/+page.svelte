@@ -19,7 +19,7 @@
     <h3>nutrition</h3>
     <ul>
         <li>They are a good source of vitamins B & D.</li>
-        <li>There are many polysaccharides in mushrooms are prebiotics, and can improve overall digestion.</li>
+        <li>There are many polysaccharides in mushrooms which are prebiotics, and can improve overall digestion.</li>
         <li>The amino acid glutamate can be found in many mushrooms, creating vibrant umami flavors.</li>
     </ul>
     <h3>sustainability</h3>
