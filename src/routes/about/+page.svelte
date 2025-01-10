@@ -31,7 +31,7 @@
     <img src="/enoki/mushroom-collage.jpg" alt="">
     <h2>how are our mushrooms grown?</h2>
     <p>Our mushrooms are a local product from Kennett Square, a town in Chester County, PA. This small town is known for its large mushroom farms, producing 50% of the world’s mushrooms.</p>
-    <p>Historically, horse manure from nearby cities was mixed with hay and cocoa shells from Hershey chocolate factory. This mix of ingredients is the ideal formula for growing mushroom spores. Spores are placed inside the manure and are left to grow in moderated buildings with the proper amount of water, carbon, and heat. Once mature, these mushrooms are shipped directly to our restuarant.</p>
+    <p>Historically, horse manure from nearby cities was mixed with hay and cocoa shells from Hershey Chocolate Factory. This mix of ingredients is the ideal formula for growing mushroom spores. Spores are placed inside the manure and are left to grow in moderated buildings with the proper amount of water, carbon, and heat. Once mature, these mushrooms are shipped directly to our restuarant.</p>
 </article>
 
 <style lang="scss">
